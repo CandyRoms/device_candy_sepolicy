@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from blaze
+# inherit from candy
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -16,25 +16,25 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/blaze/sepolicy/common/public
+    device/candy/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/blaze/sepolicy/common/private
+    device/candy/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/blaze/sepolicy/common/dynamic \
-    device/blaze/sepolicy/common/system
+    device/candy/sepolicy/common/dynamic \
+    device/candy/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/blaze/sepolicy/common/dynamic \
-    device/blaze/sepolicy/common/vendor
+    device/candy/sepolicy/common/dynamic \
+    device/candy/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/blaze/sepolicy/legacy-common/sepolicy.mk
+-include device/candy/sepolicy/legacy-common/sepolicy.mk
 
 # Include atv rules on atv product
 ifeq ($(PRODUCT_IS_ATV), true)
-include device/blaze/sepolicy/atv/sepolicy.mk
+include device/candy/sepolicy/atv/sepolicy.mk
 endif
